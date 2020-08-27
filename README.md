@@ -3,7 +3,7 @@
                                             https://www.phptravels.net/login
 
 Requirements:-
-  First, you should change the filePath in function takeScreenShot for path of screenShot.
+  First, you should change the filePath in function takeScreenShot for path of screenShot and you can see reports on build/test/results/tester/TestNG tests.html
 
 Discrption
 
