@@ -129,7 +129,7 @@ public class Testing {
      public void takeScreenShot(String methodName) throws IOException {
     	 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
             //The below method will save the screen shot in d drive with test method name
-            String filePath = "C:\\Users\\AbdullahZezo\\Documents\\NetBeansProjects\\tester\\test\\FailedTestsScreenshots\\" ;
+            String filePath = "C:\\Users\\AbdullahZezo\\Documents\\NetBeansProjects\\tester\\" ;
             FileUtils.copyFile(scrFile, new File(filePath+methodName+".png"));
             System.out.println("***Placed screen shot in "+filePath+" ***");
     }
