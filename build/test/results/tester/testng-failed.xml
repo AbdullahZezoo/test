@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [tester]">
+  <test thread-count="5" name="TestNG tests(failed)">
+    <classes>
+      <class name="tester.TestingNGTest">
+        <methods>
+          <include name="givenUserDoesNotExists_whenUserInfoIsRetrieved_then404IsReceived"/>
+        </methods>
+      </class> <!-- tester.TestingNGTest -->
+    </classes>
+  </test> <!-- TestNG tests(failed) -->
+</suite> <!-- Failed suite [tester] -->
