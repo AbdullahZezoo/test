@@ -2,8 +2,8 @@
                                             https://www.phptravels.net/register
                                             https://www.phptravels.net/login
 
-FailedScreenShots folder :
-  contains screenshots for filed testcases.
+Requirements:-
+  First, you should change the filePath in function takeScreenShot for path of screenShot.
 
 Discrption
 
