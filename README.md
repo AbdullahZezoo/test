@@ -2,6 +2,8 @@
                                             https://www.phptravels.net/register
                                             https://www.phptravels.net/login
 
+FailedScreenShots folder :
+  contains screenshots for filed testcases.
 
 Discrption
 
