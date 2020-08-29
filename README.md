@@ -19,11 +19,19 @@ it runs after each testcase, check if the testcase failed or not, if failed, it 
 
 validateRegister:
 
-it goes to https://www.phptravels.net/register and enter firstname, lastname, phone, email, password, confirmpassword, click_button then Assert the url with expected_url url = "https://www.phptravels.net/account/"
+it goes to https://www.phptravels.net/register and enter firstname, lastname, phone, email, password, confirmpassword, click_button then getCurrentUrl and assertUrl.
 
 validateLogin:
 
-it goes to https://www.phptravels.net/login and enter username, password, click_button then Assert the url with expected_url url = "https://www.phptravels.net/account/"
+it goes to https://www.phptravels.net/login and enter username, password, click_button then getCurrentUrl and assertUrl.
+
+getCurrentUrl :
+
+returns the current url.
+
+assertUrl :
+
+assertequal the actual url to the expected url .... the expected_url = "https://www.phptravels.net/account/"
 
 takeScreenShot:
 
