@@ -5,7 +5,6 @@
  */
 package tester;
 
-
 import static com.google.common.base.Predicates.equalTo;
 import java.io.BufferedReader;
 import java.io.File;
@@ -63,7 +62,7 @@ public class TestingNGTest {
         driver.manage().window().maximize();
     }
       
-    @Test(priority=1)
+    @Test(priority=2)
     public void validateRegister() throws InterruptedException {
        // Navigate to a web page
 	    driver.get("https://www.phptravels.net/register");
@@ -86,15 +85,13 @@ public class TestingNGTest {
 	    buttonElement.submit();
 	    
             Thread.sleep(5000);
-            String url = driver.getCurrentUrl();
-            String _url = "https://www.phptravels.net/account/" ;
-            System.out.println(url);
-            Assert.assertEquals(url, _url);
+	    String url = getCurrentUrl();
+	    assertUrl(url);
           
            
    }
        
-    @Test(priority=2)
+    @Test(priority=1)
     public void validateLogin() throws InterruptedException {
         // Navigate to a web page
         driver.get("https://www.phptravels.net/login");
@@ -109,11 +106,21 @@ public class TestingNGTest {
         buttonElement.click();
         
         Thread.sleep(5000);
-        String url = driver.getCurrentUrl();
-        String _url = "https://www.phptravels.net/account/" ;
-        System.out.println(url);
-        Assert.assertEquals(url, _url);
+	
+	String url = getCurrentUrl();
+	assertUrl(url);
     }
+	
+    public String getCurrentUrl() {
+	String url = driver.getCurrentUrl();
+	return url;
+    }
+	
+    public void assertUrl(String actual_url) {
+        String expected_url = "https://www.phptravels.net/account/";
+        Assert.assertEquals(actual_url, expected_url);
+    }
+	
     
    
     @AfterMethod
@@ -130,7 +137,7 @@ public class TestingNGTest {
      public void takeScreenShot(String methodName) throws IOException {
     	 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
             //The below method will save the screen shot in d drive with test method name
-            String filePath = "C:\\Users\\AbdullahZezo\\Documents\\NetBeansProjects\\tester\\tester" ;
+            String filePath = "C:\\Users\\AbdullahZezo\\Documents\\NetBeansProjects\\tester\\" ;
             FileUtils.copyFile(scrFile, new File(filePath+methodName+".png"));
             System.out.println("***Placed screen shot in "+filePath+" ***");
     }
