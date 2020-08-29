@@ -85,10 +85,8 @@ public class Testing {
 	    buttonElement.submit();
 	    
             Thread.sleep(5000);
-            String url = driver.getCurrentUrl();
-            String _url = "https://www.phptravels.net/account/" ;
-            System.out.println(url);
-            Assert.assertEquals(url, _url);
+	    String url = getCurrentUrl();
+	    assertUrl(url);
           
            
    }
@@ -108,11 +106,21 @@ public class Testing {
         buttonElement.click();
         
         Thread.sleep(5000);
-        String url = driver.getCurrentUrl();
-        String _url = "https://www.phptravels.net/account/" ;
-        System.out.println(url);
-        Assert.assertEquals(url, _url);
+	
+	String url = getCurrentUrl();
+	assertUrl(url);
     }
+	
+    public String getCurrentUrl() {
+	String url = driver.getCurrentUrl();
+	return url;
+    }
+	
+    public void assertUrl(String actual_url) {
+        String expected_url = "https://www.phptravels.net/account/";
+        Assert.assertEquals(actual_url, expected_url);
+    }
+	
     
    
     @AfterMethod
