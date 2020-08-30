@@ -171,6 +171,26 @@ public class Testing {
 	assertUrl(url);
     }
 	
+    @Test(priority=6)
+    public void validateLogin_5() throws InterruptedException {
+        // Navigate to a web page
+        driver.get("https://www.phptravels.net/login");
+
+        // Perform actions on HTML elements, entering text and submitting the form
+        WebElement usernameElement = driver.findElement(By.name("username"));
+        WebElement passwordElement = driver.findElement(By.name("password"));
+        WebElement buttonElement   = driver.findElement(By.xpath("//*[@id='loginfrm']/button"));
+
+        usernameElement.sendKeys("abdullahabdelaziz000@gmail.com");
+        passwordElement.sendKeys("Ao01");
+        buttonElement.click();
+        
+        Thread.sleep(5000);
+	
+	String url = getCurrentUrl();
+	assertUrl(url);
+    }
+	
     public String getCurrentUrl() {
 	String url = driver.getCurrentUrl();
 	return url;
