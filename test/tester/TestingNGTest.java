@@ -62,7 +62,7 @@ public class TestingNGTest {
         driver.manage().window().maximize();
     }
       
-    @Test(priority=2)
+    @Test(priority=1)
     public void validateRegister() throws InterruptedException {
        // Navigate to a web page
 	    driver.get("https://www.phptravels.net/register");
@@ -91,8 +91,8 @@ public class TestingNGTest {
            
    }
        
-    @Test(priority=1)
-    public void validateLogin() throws InterruptedException {
+    @Test(priority=2)
+    public void validateLogin_1() throws InterruptedException {
         // Navigate to a web page
         driver.get("https://www.phptravels.net/login");
 
@@ -110,6 +110,66 @@ public class TestingNGTest {
 	String url = getCurrentUrl();
 	assertUrl(url);
     }
+    @Test(priority=3)
+    public void validateLogin_2() throws InterruptedException {
+        // Navigate to a web page
+        driver.get("https://www.phptravels.net/login");
+
+        // Perform actions on HTML elements, entering text and submitting the form
+        WebElement usernameElement = driver.findElement(By.name("username"));
+        WebElement passwordElement = driver.findElement(By.name("password"));
+        WebElement buttonElement   = driver.findElement(By.xpath("//*[@id='loginfrm']/button"));
+
+        usernameElement.sendKeys("abdullahabdelaziz000@gmail.com");
+        passwordElement.sendKeys("12345678");
+        buttonElement.click();
+        
+        Thread.sleep(5000);
+	
+	String url = getCurrentUrl();
+	assertUrl(url);
+    }
+	
+    @Test(priority=4)
+    public void validateLogin_3() throws InterruptedException {
+        // Navigate to a web page
+        driver.get("https://www.phptravels.net/login");
+
+        // Perform actions on HTML elements, entering text and submitting the form
+        WebElement usernameElement = driver.findElement(By.name("username"));
+        WebElement passwordElement = driver.findElement(By.name("password"));
+        WebElement buttonElement   = driver.findElement(By.xpath("//*[@id='loginfrm']/button"));
+
+        usernameElement.sendKeys("abdullahabdelaziz000@gmail.com");
+        passwordElement.sendKeys("asdfghjk");
+        buttonElement.click();
+        
+        Thread.sleep(5000);
+	
+	String url = getCurrentUrl();
+	assertUrl(url);
+    }
+
+    @Test(priority=5)
+    public void validateLogin_4() throws InterruptedException {
+        // Navigate to a web page
+        driver.get("https://www.phptravels.net/login");
+
+        // Perform actions on HTML elements, entering text and submitting the form
+        WebElement usernameElement = driver.findElement(By.name("username"));
+        WebElement passwordElement = driver.findElement(By.name("password"));
+        WebElement buttonElement   = driver.findElement(By.xpath("//*[@id='loginfrm']/button"));
+
+        usernameElement.sendKeys("abdullahabdelaziz@gmail.com");
+        passwordElement.sendKeys("Ao012011");
+        buttonElement.click();
+        
+        Thread.sleep(5000);
+	
+	String url = getCurrentUrl();
+	assertUrl(url);
+    }
+	
 	
     public String getCurrentUrl() {
 	String url = driver.getCurrentUrl();
