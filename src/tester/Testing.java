@@ -92,7 +92,7 @@ public class Testing {
    }
        
     @Test(priority=2)
-    public void validateLogin() throws InterruptedException {
+    public void validateLogin_1() throws InterruptedException {
         // Navigate to a web page
         driver.get("https://www.phptravels.net/login");
 
@@ -112,7 +112,7 @@ public class Testing {
     }
 	
     @Test(priority=3)
-    public void validateLogin() throws InterruptedException {
+    public void validateLogin_2() throws InterruptedException {
         // Navigate to a web page
         driver.get("https://www.phptravels.net/login");
 
@@ -132,7 +132,7 @@ public class Testing {
     }
 	
     @Test(priority=4)
-    public void validateLogin() throws InterruptedException {
+    public void validateLogin_3() throws InterruptedException {
         // Navigate to a web page
         driver.get("https://www.phptravels.net/login");
 
@@ -152,7 +152,7 @@ public class Testing {
     }
 
     @Test(priority=5)
-    public void validateLogin() throws InterruptedException {
+    public void validateLogin_4() throws InterruptedException {
         // Navigate to a web page
         driver.get("https://www.phptravels.net/login");
 
